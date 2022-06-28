@@ -1,0 +1,83 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+
+    <title>Поисковая система</title>
+</head>
+ <body>
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar-->
+            <div class="border-end bg-white" id="sidebar-wrapper">
+                <div class="sidebar-heading border-bottom bg-light">Поискова система</div>
+                <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'marks_search' %}" style="margin-bottom: -20px;">Товарные знаки</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!" style="margin-bottom: -17px;">ТИМС</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!" style="margin-bottom: -17px;">НМПТ</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!" style="margin-bottom: -17px;">Авторское право</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!" style="margin-bottom: -17px;">Объекты смежных прав</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!" style="margin-bottom: -17px;">ОТЗ</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!" style="margin-bottom: -17px;">Базы данных</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!" style="margin-bottom: -17px;">Изобретение</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!" style="margin-bottom: -17px;">Полезная модель</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!" style="margin-bottom: -17px;">Промышленный образец</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!" style="margin-bottom: -17px;">Прораммы ЭВМ</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!" style="margin-bottom: -17px;">Селекционные достижения</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!" style="margin-bottom: -17px;">Традиционные знания</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!" style="margin-bottom: -17px;">Рационализорские предложения</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!" style="margin-bottom: -17px;">Лицензионные соглашения</a>
+                </div>
+            </div>
+            <!-- Page content wrapper-->
+            <div id="page-content-wrapper">
+                <!-- Top navigation-->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                    <div class="container-fluid">
+                        <button class="btn btn-primary" id="sidebarToggle">Меню</button>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+                        </div>
+                    </div>
+                    <h4 style="text-align: center;">Информационно-поисковая система Кыргызпатента</h4>
+                </nav>
+
+                <!-- Page content-->
+                {% block content %}
+                {% endblock %}
+            </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script>
+        window.addEventListener('DOMContentLoaded', event => {
+
+    // Toggle the side navigation
+    const sidebarToggle = document.body.querySelector('#sidebarToggle');
+    if (sidebarToggle) {
+        // Uncomment Below to persist sidebar toggle between refreshes
+         if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
+            document.body.classList.toggle('sb-sidenav-toggled');
+         }
+        sidebarToggle.addEventListener('click', event => {
+            event.preventDefault();
+            document.body.classList.toggle('sb-sidenav-toggled');
+            localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
+        });
+    }
+
+});
+
+        </script>
+    </body>
+</html>
+

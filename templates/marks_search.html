@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+{#    <form action="{% url 'marks_search_results' %}" method="get">#}
+{#  reg <input name="q" type="text" placeholder="Search...">#}
+{#    name<input name="q1" type="text" placeholder="Search...">#}
+{#    <button href="{% url 'marks_search_results' %}" type="submit">Найти</button>#}
+    <div class="container wow fadeIn">
+        <h2 style="margin-top: 20px; margin-bottom: 20px; "><span class="section-intro__style">Поиск товарного знака</span></h2>
+
+      <form action="{% url 'marks_search_results' %}" method="get" id="mark">
+        <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput" >(11) № регистрации:</label>
+              <input name = "reg" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: 12173">
+          </div>
+          <div class="form-group" style="width: 600px;">
+           <label for="formGroupExampleInput2">(15) Дата регистрации:</label>
+            <input name = "rdate" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: 2013-10-31">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput">(18) Дата истечения срока действия правовой охраны на товарный знак:</label>
+              <input name = "exp" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: 12173">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput2">(21) № заявки:</label>
+              <input name = "nbr" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: 220120599.3">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput" >(22) Дата подачи заявки:</label>
+              <input name = "fdate" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: 2012-11-19">
+          </div>
+          <div class="form-group" style="width: 600px;">
+           <label for="formGroupExampleInput2">(54) Название товарного знака:</label>
+            <input name = "name" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: Жемчужина Нила Кения">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput">(73) Владелец:</label>
+              <input name = "owner" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: Общество с ограниченной ответственностью 'РИМИ'">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput2">(51) МКТУ:</label>
+              <input name = "mktu" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: 08">
+          </div>
+            <button href="{% url 'marks_search_results' %}" type="submit" class="btn btn-primary" style="margin-bottom: 40px">Отправить запрос</button>
+          <button type="button" class="btn btn-primary" onclick="document.getElementById('mark').reset()" value="reset" style="margin-bottom: 40px"> Очистить </button>
+     </form>
+    </div>
+
+
+{% endblock %}

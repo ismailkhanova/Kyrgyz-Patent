@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+{#<h4>{{ mark.file_nbr }} {{ mark.mark_name }} {{ mark.registration_date }} {{ mark.filing_date }} {{ mark.registration_nbr }}#}
+{#    {{ mark.registration_dup }} {{ mark.expiration_date }} {{ mark.sign_wcode}} {{ mark.owner_name }} {{ mark.txt_nice_class_code }}</h4>#}
+<div class="table-responsive">
+    <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>№ патента/свидетельсва:</th>
+      <th>Товарный знак</th>
+      <th>Владелец</th>
+        <th>Регистрационный номер</th>
+      <th>Дата посупления</th>
+      <th>Дата окончания</th>
+        <th>МКТУ</th>
+        <th>Вид знака</th>
+      <th>Дата регистрации</th>
+      <th>Какой-то номер</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for mark in mark_result %}
+    <tr>
+        <td><a href="{% url 'mark_detail' pk=mark.pk %}">{{ mark.registration_nbr }}</a></td>
+      <td>{{ mark.mark_name }}</td>
+      <td>{{ mark.owner_name }}</td>
+      <td>{{ mark.registration_dup }}</td>
+      <td>{{ mark.filing_date }}</td>
+      <td>{{ mark.expiration_date }}</td>
+      <td>{{ mark.txt_nice_class_code }}</td>
+      <td>{{ mark.sign_wcode}} </td>
+      <td>{{ mark.registration_date }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+{% endblock %}

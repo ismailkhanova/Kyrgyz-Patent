@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="table-responsive">
+    <table class="table table-bordered">
+      <tbody>
+    <tr>
+      <th scope="row">№ патента/свидетельсва:</th>
+        <td>{{ mark.registration_nbr }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Товарный знак</th>
+        <td>{{ mark.mark_name }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Владелец</th>
+        <td>{{ mark.owner_name }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Регистрационный номер</th>
+         <td>{{ mark.registration_dup }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дата посупления</th>
+         <td>{{ mark.filing_date }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дата окончания</th>
+         <td>{{ mark.expiration_date }}</td>
+    </tr>
+    <tr>
+        <th scope="row">МКТУ</th>
+
+        <td>{{ mark.txt_nice_class_code }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Вид знака</th>
+        <td>{{ mark.sign_wcode}} </td>
+    </tr>
+    <tr>
+      <th scope="row">Дата регистрации</th>
+        <td>{{ mark.registration_date }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Номер файла</th>
+          <td>{{ mark.file_nbr }}</td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+{% endblock %}
