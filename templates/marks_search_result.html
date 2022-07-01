@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-{#<h4>{{ mark.file_nbr }} {{ mark.mark_name }} {{ mark.registration_date }} {{ mark.filing_date }} {{ mark.registration_nbr }}#}
-{#    {{ mark.registration_dup }} {{ mark.expiration_date }} {{ mark.sign_wcode}} {{ mark.owner_name }} {{ mark.txt_nice_class_code }}</h4>#}
 <div class="table-responsive">
     <table class="table table-bordered">
   <thead>
@@ -37,22 +35,34 @@
 </table>
 </div>
 
-<div class="pagination">
-    <span class="step-links">
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
         {% if page_obj.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+
+            <li class="page-item">
+            <a class="page-link" href="/mark_search?page={{ page_obj.previous_page_number }}&reg={{ reg }}&rdate={{ rdate }}&exp={{ exp }}&nbr={{ nbr }}&fdate={{ fdate }}&name={{ name }}&owner={{ owner }}&mktu={{ mktu }}"  aria-label="Previous">
+            <span aria-hidden="true">&laquo; Назад</span>
+            <span class="sr-only">Previous</span>
+            </a>
+            </li>
         {% endif %}
 
-        <span class="current">
+        <span class="current" style="margin-left: 10px; margin-right: 10px;">
             Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
         </span>
 
         {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">next</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            <li class="page-item">
+            <a class="page-link" href="/mark_search?page={{ page_obj.next_page_number }}&reg={{ reg }}&rdate={{ rdate }}&exp={{ exp }}&nbr={{ nbr }}&fdate={{ fdate }}&name={{ name }}&owner={{ owner }}&mktu={{ mktu }}"  aria-label="Next">
+            <span aria-hidden="true">Далее &raquo;</span>
+            <span class="sr-only">Next</span>
+            </a>
+            </li>
+
         {% endif %}
-    </span>
-</div>
+    </ul>
+</nav>
+
+
 
 {% endblock %}

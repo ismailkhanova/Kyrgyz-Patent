@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container wow fadeIn">
+        <h2 style="margin-top: 20px; margin-bottom: 20px; "><span class="section-intro__style">Поиск по базе ТИМС</span></h2>
+
+      <form action="{% url 'tims_search_results' %}" method="get" id="mark">
+        <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput" >№ свидетельства:</label>
+              <input name = "nbrs" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: 5">
+          </div>
+          <div class="form-group" style="width: 600px;">
+           <label for="formGroupExampleInput2">Дата регистрации:</label>
+            <input name = "rdate" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: 21.12.2016">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput">Номер заявки:</label>
+              <input name = "nreg" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: 20150005.8">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput2">Дата подачи заявки:</label>
+              <input name = "indate" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: 21.12.2016">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput" >Название:</label>
+              <input name = "name" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: Топологическая схема">
+          </div>
+          <div class="form-group" style="width: 600px;">
+           <label for="formGroupExampleInput2">Заявитель:</label>
+            <input name = "app" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: Даровских Владимир Дмитриевич">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput">Правообладатель:</label>
+              <input name = "owner" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: Даровских Владимир Дмитриевич">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput2">Автор:</label>
+              <input name = "avt" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: Даровских Владимир Дмитриевич">
+          </div>
+            <button href="{% url 'marks_search_results' %}" type="submit" class="btn btn-primary" style="margin-bottom: 40px">Отправить запрос</button>
+          <button type="button" class="btn btn-primary" onclick="document.getElementById('mark').reset()" value="reset" style="margin-bottom: 40px"> Очистить </button>
+     </form>
+    </div>
+
+
+{% endblock %}

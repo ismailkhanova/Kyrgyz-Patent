@@ -23,8 +23,7 @@ class IpMark(models.Model):
 
 
 class IpMarkNiceClasses(models.Model):
-    id_mark = models.ForeignKey(IpMark, on_delete=models.CASCADE, blank=True, null=True)
-    registration_nbr = models.CharField(max_length=255)
+    registration_nbr = models.ForeignKey(IpMark, on_delete=models.CASCADE)
     nice_class_code = models.CharField(max_length=255)
     nice_class_description = models.TextField()
 
@@ -78,20 +77,20 @@ class TblAvtor(models.Model):
     in_number = models.CharField(max_length=20)
     in_date = models.CharField(max_length=20, blank=True, null=True)
     regist_number = models.CharField(max_length=20)
-    name_work = models.CharField(max_length=256)
-    date_place_public = models.CharField(max_length=150)
-    avtor = models.CharField(max_length=256)
-    city_avtor = models.CharField(max_length=256)
-    owner = models.CharField(max_length=150)
-    adress_perepiski = models.CharField(max_length=256)
+    name_work = models.TextField()
+    date_place_public = models.TextField()
+    avtor = models.TextField()
+    city_avtor = models.TextField()
+    owner = models.TextField()
+    adress_perepiski = models.TextField()
     registration_number = models.CharField(max_length=20)
     registration_date = models.TextField()
-    iden = models.CharField(max_length=256)
+    iden = models.TextField()
     status_av = models.IntegerField()
-    pseudonym = models.CharField(max_length=256)
-    oap = models.CharField(max_length=256)
-    date_av = models.CharField(max_length=256)
-    num_av = models.CharField(max_length=256)
+    pseudonym = models.TextField()
+    oap = models.TextField()
+    date_av = models.TextField()
+    num_av = models.TextField()
     etc_av = models.TextField()
 
     class Meta:
@@ -395,20 +394,20 @@ class TblSp(models.Model):
 
 # ТИМС
 class TblTims(models.Model):
-    id_tims = models.AutoField(primary_key=True)
-    in_number_t = models.CharField(max_length=128)
-    in_date_t = models.CharField(max_length=128)
-    number_reg_t = models.CharField(max_length=128)
-    app_t = models.CharField(max_length=256)
-    owner_t = models.CharField(max_length=256)
-    contact_t = models.CharField(max_length=256)
-    name_t = models.CharField(max_length=256)
-    date_place_t = models.CharField(max_length=128)
-    avtor_t = models.CharField(max_length=128)
-    referat_t = models.TextField()
-    num_svid_t = models.CharField(max_length=128)
-    date_svid_t = models.CharField(max_length=128)
-    status_tims = models.IntegerField()
+    id_tims = models.AutoField(primary_key=True, verbose_name='id')
+    in_number_t = models.CharField(max_length=128, verbose_name='Входящий номер')
+    in_date_t = models.CharField(max_length=128, verbose_name='Дата подачи заявления')
+    number_reg_t = models.CharField(max_length=128, verbose_name='Номер заявки')
+    app_t = models.CharField(max_length=256, verbose_name='Заявитель')
+    owner_t = models.CharField(max_length=256, verbose_name='Правообладатель')
+    contact_t = models.CharField(max_length=256, verbose_name='Контактные данные правообладателя')
+    name_t = models.CharField(max_length=256, verbose_name='Название ТИМС')
+    date_place_t = models.CharField(max_length=128, verbose_name='Дата и место первого выпуска в свет ТИМС')
+    avtor_t = models.CharField(max_length=128, verbose_name='Автор')
+    referat_t = models.TextField(verbose_name='Аннотация')
+    num_svid_t = models.CharField(max_length=128, verbose_name='№ свидетельства')
+    date_svid_t = models.CharField(max_length=128, verbose_name='Дата регистрации')
+    status_tims = models.IntegerField(verbose_name='Статус')
 
     class Meta:
         db_table = 'tbl_tims'

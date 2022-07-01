@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="table-responsive">
+    <table class="table table-bordered">
+      <tbody>
+    <tr>
+      <th scope="row">Входящий номер</th>
+        <td>{{ tims.in_number_t }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дата подачи заявки</th>
+        <td>{{ tims.in_date_t }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Номер заявки</th>
+        <td>{{ tims.number_reg_t }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Заявитель</th>
+         <td>{{ tims.app_t }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Правообладатель</th>
+         <td>{{ tims.owner_t }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Автор</th>
+         <td>{{ tims.avtor_t }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Название ТИМС</th>
+
+        <td>{{ tims.name_t }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Номер свидетельства</th>
+        <td>{{ tims.num_svid_t}} </td>
+    </tr>
+    <tr>
+      <th scope="row">Дата регистрации</th>
+        <td>{{ tims.date_svid_t }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Контактные данные правообладателя</th>
+          <td>{{ tims.contact_t }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дата и место первого выпуска в свет ТИМС</th>
+          <td>{{ tims.date_place_t }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Аннотация</th>
+          <td>{{ tims.referat_t}}</td>
+    </tr>
+
+
+  </tbody>
+</table>
+</div>
+
+{% endblock %}
