@@ -6,33 +6,30 @@
   <thead>
     <tr>
       <th>Входящий номер</th>
-        <th>Дата подачи заявки</th>
-         <th>Номер заявки</th>
-        <th>Заявитель</th>
+      <th>Дата подачи</th>
+      <th>Регистрационный номер</th>
         <th>Правообладатель</th>
-        <th>Автор</th>
-        <th>Название ТИМС</th>
+      <th>Автор</th>
+      <th>Название</th>
         <th>Номер свидетельства</th>
-      <th>Дата регистрации</th>
+        <th>Дата регистрации</th>
       <th>Статус</th>
-
     </tr>
   </thead>
   <tbody>
-  {% for tims in tims_result %}
+  {% for evm in evm_result %}
     <tr>
-        <td><a href="{% url 'tims_detail' pk=tims.pk %}">{{ tims.in_number_t }}</a></td>
-      <td>{{ tims.in_date_t }}</td>
-      <td>{{ tims.number_reg_t }}</td>
-      <td>{{ tims.app_t }}</td>
-      <td>{{ tims.owner_t }}</td>
-      <td>{{ tims.avtor_t }}</td>
-      <td>{{ tims.name_t }}</td>
-      <td>{{ tims.num_svid_t}} </td>
-      <td>{{ tims.date_svid_t }}</td>
-    {% if tims.status_tims == 1 %}
+        <td><a href="{% url 'evm_detail' pk=evm.pk %}">{{ evm.in_number }}</a></td>
+      <td>{{ evm.in_date }}</td>
+      <td>{{ evm.registration_number }}</td>
+      <td>{{ evm.owner }}</td>
+      <td>{{ evm.avtor }}</td>
+      <td>{{ evm.name_work }}</td>
+      <td>{{ evm.number_svid}}</td>
+      <td>{{ evm.date_svid}} </td>
+       {% if evm.status_evm == 1 %}
       <td style="color: green;">Действует</td>
-    {% else %}
+        {% else %}
       <td style="color: red;">Прекращен</td>
     {% endif %}
     </tr>
@@ -46,7 +43,7 @@
         {% if page_obj.has_previous %}
 
             <li class="page-item">
-            <a class="page-link" href="/tims_search?page={{ page_obj.previous_page_number }}&nbrs={{ nbrs }}&rdate={{ rdate }}&nreg={{ nreg }}&indate={{ indate }}&name={{ name }}&app={{ app }}&owner={{ owner }}&avt={{ avt }}"  aria-label="Previous">
+            <a class="page-link" href="/evm_search?page={{ page_obj.previous_page_number }}&nums={{ nums }}&rdate={{ rdate }}&rnum={{ rnum }}&indate={{ indate }}&nwork={{ nwork }}&avt={{ avt }}&owner={{ owner }}"  aria-label="Previous">
             <span aria-hidden="true">&laquo; Назад</span>
             <span class="sr-only">Previous</span>
             </a>
@@ -59,7 +56,7 @@
 
         {% if page_obj.has_next %}
             <li class="page-item">
-            <a class="page-link" href="/tims_search?page={{ page_obj.next_page_number }}&nbrs={{ nbrs }}&rdate={{ rdate }}&nreg={{ nreg }}&indate={{ indate }}&name={{ name }}&app={{ app }}&owner={{ owner }}&avt={{ avt }}"  aria-label="Next">
+            <a class="page-link" href="/evm_search?page={{ page_obj.next_page_number }}&nums={{ nums }}&rdate={{ rdate }}&rnum={{ rnum }}&indate={{ indate }}&nwork={{ nwork }}&avt={{ avt }}&owner={{ owner }}"  aria-label="Next">
             <span aria-hidden="true">Далее &raquo;</span>
             <span class="sr-only">Next</span>
             </a>

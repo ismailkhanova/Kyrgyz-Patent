@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="table-responsive">
+    <table class="table table-bordered">
+      <tbody>
+    <tr>
+      <th scope="row">Входящий номер:</th>
+        <td>{{ pobr.f000 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">(21) Номер заявки:</th>
+        <td>{{ pobr.f210 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">(22) Дата подачи заявки:</th>
+        <td>{{ pobr.f220 }}</td>
+    </tr>
+    <tr>
+        <th scope="row">(54) Название:</th>
+         <td>{{ pobr.f540 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">(11) Номер охранного документа:</th>
+         <td>{{ pobr.f100 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">(15) Дата регистрации охранного документа:</th>
+         <td>{{ pobr.f150 }}</td>
+    </tr>
+    <tr>
+        <th scope="row">(46) Дата публикации:</th>
+
+        <td>{{ pobr.f460 }}</td>
+    </tr>
+    <tr>
+        <th scope="row">(51) Индекс МПК:</th>
+        <td>{{ pobr.f510 }} </td>
+    </tr>
+    <tr>
+      <th scope="row">(71) Заявитель:</th>
+        <td>{{ pobr.f731 }}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">(72) Автор:</th>
+          <td>{{ pobr.f732 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">(73) Патентовладелец:</th>
+          <td>{{ pobr.f733}}</td>
+    </tr>
+
+     <tr>
+      <th scope="row">Номер журнала и дата прекращения:</th>
+          <td>{{ pobr.f941}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Адрес для переписки:</th>
+          <td>{{ pobr.f980 }}</td>
+    </tr>
+      <tr>
+      <th scope="row">Статус</th>
+       {% if pobr.status_po == 1 %}
+      <td style="color: green;">Действует</td>
+        {% else %}
+      <td style="color: red;">Прекращен</td>
+        {% endif %}
+    </tr>
+
+
+  </tbody>
+</table>
+</div>
+
+{% endblock %}

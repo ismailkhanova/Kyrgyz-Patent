@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container wow fadeIn">
+        <h2 style="margin-top: 20px; margin-bottom: 20px; "><span class="section-intro__style">Поиск НМПТ</span></h2>
+
+      <form action="{% url 'nmpt_search_results' %}" method="get" id="nmpt">
+        <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput" >(11) № свидетельства:</label>
+              <input name = "nbrs" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: 15">
+          </div>
+          <div class="form-group" style="width: 600px;">
+           <label for="formGroupExampleInput2">(15) Дата регистрации:</label>
+            <input name = "rdate" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: 30.04.2013">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput2">(18)Дата истечения срока:</label>
+              <input name = "exp" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: 17.08.2022">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput" >(22) Дата подачи заявки:</label>
+              <input name = "fdate" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: 17.08.2012">
+          </div>
+          <div class="form-group" style="width: 600px;">
+           <label for="formGroupExampleInput2">(54) Название товарного знака:</label>
+            <input name = "name" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: МИНЕРАЛЬНАЯ ВОДА 'КАРАЧИНСКАЯ' ">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput">(73) Владелец:</label>
+              <input name = "owner" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: Общество с ограниченной ответственностью 'Карачинский источник'">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput2">Вид товара</label>
+              <input name = "vid" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: Минеральная вода">
+          </div>
+            <button href="{% url 'nmpt_search_results' %}" type="submit" class="btn btn-primary" style="margin-bottom: 40px">Отправить запрос</button>
+          <button type="button" class="btn btn-primary" onclick="document.getElementById('mark').reset()" value="reset" style="margin-bottom: 40px"> Очистить </button>
+     </form>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="table-responsive">
+    <table class="table table-bordered">
+      <tbody>
+    <tr>
+      <th scope="row">Входящий номер</th>
+        <td>{{ rp.f000 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">(22) Дата подачи заявки:</th>
+        <td>{{ rp.f220 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">(54) Название:</th>
+        <td>{{ rp.f540 }}</td>
+    </tr>
+    <tr>
+        <th scope="row">(11) Номер охранного документа:</th>
+         <td>{{ rp.f100 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">(15) Дата регистрации охранного документа:</th>
+         <td>{{ rp.f150 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Предприятие, к деятельности которого относится рационализаторское предложение</th>
+         <td>{{ rp.f580 }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Предприятие, признавшее рационализаторское предложение</th>
+
+        <td>{{ rp.f585 }}</td>
+    </tr>
+    <tr>
+        <th scope="row">(72) Автор</th>
+        <td>{{ rp.f730 }} </td>
+    </tr>
+      <tr>
+      <th scope="row">Статус</th>
+       {% if rp.status_rp == 1 %}
+      <td style="color: green;">Действует</td>
+        {% else %}
+      <td style="color: red;">Прекращен</td>
+        {% endif %}
+    </tr>
+
+
+  </tbody>
+</table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="table-responsive">
+    <table class="table table-bordered">
+      <tbody>
+    <tr>
+      <th scope="row">Входящий номер:</th>
+        <td>{{ cel.f000 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">(21) Номер заявки:</th>
+        <td>{{ cel.f210 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">(22) Дата подачи заявки:</th>
+        <td>{{ cel.f220 }}</td>
+    </tr>
+    <tr>
+        <th scope="row">(54) Название:</th>
+         <td>{{ cel.f540 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">(11) Номер охранного документа:</th>
+         <td>{{ cel.f100 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">(15) Дата регистрации охранного документа:</th>
+         <td>{{ cel.f150 }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Род, вид (рус):</th>
+
+        <td>{{ cel.f600 }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Род, вид (лат):</th>
+        <td>{{ cel.f601 }} </td>
+    </tr>
+    <tr>
+      <th scope="row">(71) Заявитель:</th>
+        <td>{{ cel.f731 }}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">(72) Автор:</th>
+          <td>{{ cel.f732 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">(73) Патентовладелец:</th>
+          <td>{{ cel.f733}}</td>
+    </tr>
+
+     <tr>
+      <th scope="row">Номер журнала и дата прекращения:</th>
+          <td>{{ cel.f941}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Адрес для переписки:</th>
+          <td>{{ cel.f980 }}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Номер(а)и дата(ы) приоритетной(ых) заявки(ок):</th>
+          <td>{{ cel.f310}}</td>
+    </tr>
+
+      <tr>
+      <th scope="row">Статус</th>
+       {% if cel.status_sel == 1 %}
+      <td style="color: green;">Действует</td>
+        {% else %}
+      <td style="color: red;">Прекращен</td>
+        {% endif %}
+    </tr>
+
+
+  </tbody>
+</table>
+</div>
+
+{% endblock %}

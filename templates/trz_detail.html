@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="table-responsive">
+    <table class="table table-bordered">
+      <tbody>
+      <tr>
+      <th scope="row">Статус</th>
+       {% if trz.status_trz == 1 %}
+      <td style="color: green;">Действует</td>
+        {% else %}
+      <td style="color: red;">Прекращен</td>
+        {% endif %}
+    </tr>
+    <tr>
+      <th scope="row">Входящий номер</th>
+        <td>{{ trz.in_number }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Номер свидетельства:</th>
+        <td>{{ trz.number_svid }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дата регистрации охранного документа:</th>
+        <td>{{ trz.data_svid }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Дата окончания охранного документа:</th>
+         <td>{{ trz.data_end }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дата подачи заявки:</th>
+         <td>{{ trz.date_podachi }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Заявитель:</th>
+         <td>{{ trz.zayavitel }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Владелец:</th>
+
+        <td>{{ trz.owner }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Название(на русском)</th>
+        <td>{{ trz.nametrz_ru }} </td>
+    </tr>
+    <tr>
+        <th scope="row">Название(кыргызча)</th>
+        <td>{{ trz.nametrz_kg }} </td>
+    </tr>
+    <tr>
+        <th scope="row">Название(english)</th>
+        <td>{{ trz.nametrz_en }} </td>
+    </tr>
+    <tr>
+      <th scope="row">Место происхождения:</th>
+        <td>{{ trz.place_of_trz }}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Описание на русском:</th>
+          <td>{{ trz.description_ru }}</td>
+    </tr>
+     <tr>
+      <th scope="row">Описание на кыргызском:</th>
+          <td>{{ trz.description_kg }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Описание на английском:</th>
+          <td>{{ trz.description_en }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Область применения:</th>
+          <td>{{ trz.oblast_primeneniya}}</td>
+    </tr>
+
+     <tr>
+      <th scope="row">Адрес для переписки:</th>
+          <td>{{ trz.adress_perepiski}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+{% endblock %}

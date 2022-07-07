@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="table-responsive">
+    <table class="table table-bordered">
+      <tbody>
+    <tr>
+      <th scope="row">(11)Номер свидетельства</th>
+        <td>{{ otz.k11 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">(15)Дата регистрации'</th>
+        <td>{{ otz.k15 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">(54)Название ОТЗ</th>
+        <td>{{ otz.k54 }}</td>
+    </tr>
+    <tr>
+        <th scope="row">(73)Владелец</th>
+         <td>{{ otz.k73 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">(46)№/год публикации'</th>
+         <td>{{ otz.k46 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дата решения о признании ОТЗ</th>
+         <td>{{ otz.app }}</td>
+    </tr>
+      <tr>
+      <th scope="row">Статус</th>
+       {% if otz.status_otz == 1 %}
+      <td style="color: green;">Действует</td>
+        {% else %}
+      <td style="color: red;">Прекращен</td>
+        {% endif %}
+    </tr>
+
+
+  </tbody>
+</table>
+</div>
+
+{% endblock %}

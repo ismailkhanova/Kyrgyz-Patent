@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="table-responsive">
+    <table class="table table-bordered">
+
+  <thead>
+
+    <tr>
+      <th>Входящий номер</th>
+        <th>Название произведения</th>
+        <th>Автор(ы)</th>
+        <th>Обладатель имущественных прав</th>
+        <th>Номер свидетельства о регистрации</th>
+        <th>Дата регистрации</th>
+        <th>Идентификатор объекта</th>
+        <th>Статус</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for avtor in avtor_result %}
+    <tr>
+        <td><a href="{% url 'avtor_detail' pk=avtor.pk %}">{{ avtor.in_number }}</a></td>
+      <td>{{ avtor.name_work }}</td>
+      <td>{{ avtor.avtor }}</td>
+      <td>{{ avtor.owner }}</td>
+      <td>{{ avtor.registration_number }}</td>
+      <td>{{ avtor.registration_date }}</td>
+      <td>{{ avtor.iden }}</td>
+        {% if avtor.status_av == 1 %}
+      <td style="color: green;">Действует</td>
+        {% else %}
+      <td style="color: red;">Прекращен</td>
+    {% endif %}
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        {% if page_obj.has_previous %}
+
+            <li class="page-item">
+            <a class="page-link" href="/avtor_search?page={{ page_obj.previous_page_number }}&inum={{ inum }}&regn={{ regn }}&rnum={{ rnum }}&indate={{ indate }}&avt={{ avt }}&nwork={{ nwork }}&owner={{ owner }}&iden={{ iden }}"  aria-label="Previous">
+            <span aria-hidden="true">&laquo; Назад</span>
+            <span class="sr-only">Previous</span>
+            </a>
+            </li>
+        {% endif %}
+
+        <span class="current" style="margin-left: 10px; margin-right: 10px;">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <li class="page-item">
+            <a class="page-link" href="/avtor_search?page={{ page_obj.next_page_number }}&inum={{ inum }}&regn={{ regn }}&rnum={{ rnum }}&indate={{ indate }}&avt={{ avt }}&nwork={{ nwork }}&owner={{ owner }}&iden={{ iden }}"  aria-label="Next">
+            <span aria-hidden="true">Далее &raquo;</span>
+            <span class="sr-only">Next</span>
+            </a>
+            </li>
+
+        {% endif %}
+    </ul>
+</nav>
+
+
+{% endblock %}

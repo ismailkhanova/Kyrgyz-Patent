@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="table-responsive">
+    <table class="table table-bordered">
+      <tbody>
+    <tr>
+      <th scope="row">Входящий номер</th>
+        <td>{{ sp.in_number }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дата подачи заявки</th>
+        <td>{{ sp.in_date }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Регистрационный номер</th>
+        <td>{{ sp.registration_number }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Название ОСП</th>
+         <td>{{ sp.name_object }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Место первого обнародования</th>
+         <td>{{ sp.publik_place }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дата первого обнародования</th>
+         <td>{{ sp.publik_date }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Субъекты смежных прав</th>
+
+        <td>{{ sp.subject_sp }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Название и автор объекта авторского права, использованного
+            при создании объекта смежных права</th>
+        <td>{{ sp.object_name_use }} </td>
+    </tr>
+    <tr>
+      <th scope="row">Обладатель имущественных прав</th>
+        <td>{{ sp.owner_imushest_prav }}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Контактные данные обладателя имущественных прав</th>
+          <td>{{ sp.adress_kontact }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Номер свидетельства</th>
+          <td>{{ sp.number_svid}}</td>
+    </tr>
+
+     <tr>
+      <th scope="row">Дата регистрации</th>
+          <td>{{ sp.date_svid}}</td>
+    </tr>
+
+      <tr>
+      <th scope="row">Статус</th>
+       {% if sp.status_sp == 1 %}
+      <td style="color: green;">Действует</td>
+        {% else %}
+      <td style="color: red;">Прекращен</td>
+        {% endif %}
+    </tr>
+
+
+  </tbody>
+</table>
+</div>
+
+{% endblock %}

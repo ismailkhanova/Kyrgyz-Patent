@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container wow fadeIn">
+        <h2 style="margin-top: 20px; margin-bottom: 20px; "><span class="section-intro__style">Поиск Лицензионного договора ОИС</span></h2>
+
+      <form action="{% url 'lic_search_results' %}" method="get" id="lic">
+        <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput" >Номер регистрации ОИС в Кыргызпатенте:</label>
+              <input name = "numr" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример:	1094">
+          </div>
+          <div class="form-group" style="width: 600px;">
+           <label for="formGroupExampleInput2">Название объекта ИС:</label>
+            <input name = "name" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: Привязной аэростат">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput" >Дата регистрации:</label>
+              <input name = "rdate" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: 30.08.2001">
+          </div>
+          <div class="form-group" style="width: 600px;">
+           <label for="formGroupExampleInput2">Номер регистрации решения:</label>
+            <input name = "regn" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: 20000002.2">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput">Правообладатель / Лицензиар:</label>
+              <input name = "licr" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: Табалдиев Т.A.">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput2">Правоприемник / Лицензиат:</label>
+              <input name = "lict" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: Табалдиев Т.A.">
+          </div>
+            <button href="{% url 'lic_search_results' %}" type="submit" class="btn btn-primary" style="margin-bottom: 40px">Отправить запрос</button>
+          <button type="button" class="btn btn-primary" onclick="document.getElementById('lic').reset()" value="reset" style="margin-bottom: 40px"> Очистить </button>
+     </form>
+    </div>
+
+
+{% endblock %}

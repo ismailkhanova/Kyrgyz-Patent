@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="table-responsive">
+    <table class="table table-bordered">
+      <tbody>
+    <tr>
+      <th scope="row">Входящий номер</th>
+        <td>{{ avtor.in_number }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дата подачи заявки</th>
+        <td>{{ avtor.in_date }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Регистрационный номер</th>
+        <td>{{ avtor.regist_number }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Название произведения</th>
+         <td>{{ avtor.name_work }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дата и место первого обнародования</th>
+         <td>{{ avtor.date_place_public }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Автор(ы)</th>
+         <td>{{ avtor.avtor }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Страна</th>
+
+        <td>{{ avtor.city_avtor }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Обладатель имущественных прав</th>
+        <td>{{ avtor.owner }} </td>
+    </tr>
+    <tr>
+      <th scope="row">Номер свидетельства о регистрации</th>
+        <td>{{ avtor.registration_number }}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Дата регистрации</th>
+          <td>{{ avtor.registration_date }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Идентификатор объекта</th>
+          <td>{{ avtor.iden}}</td>
+    </tr>
+
+     <tr>
+      <th scope="row">Псевдоним</th>
+          <td>{{ avtor.pseudonym}}</td>
+    </tr>
+
+     <tr>
+      <th scope="row">Дата регистрации свидетельства</th>
+          <td>{{ avtor.date_av}}</td>
+    </tr>
+
+      <tr>
+      <th scope="row">Статус</th>
+       {% if avtor.status_av == 1 %}
+      <td style="color: green;">Действует</td>
+        {% else %}
+      <td style="color: red;">Прекращен</td>
+        {% endif %}
+  </tbody>
+</table>
+</div>
+
+{% endblock %}

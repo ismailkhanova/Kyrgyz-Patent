@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container wow fadeIn">
+        <h2 style="margin-top: 20px; margin-bottom: 20px; "><span class="section-intro__style">Поиск Традиционные знания</span></h2>
+
+      <form action="{% url 'trz_search_results' %}" method="get" id="trz">
+        <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput" >Входящий номер:</label>
+              <input name = "inum" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: 9">
+          </div>
+          <div class="form-group" style="width: 600px;">
+           <label for="formGroupExampleInput2">Номер свидетельства:</label>
+            <input name = "nums" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: 2016001.ТРЗ">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput">Дата регистрации охранного документа:</label>
+              <input name = "rdate" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: 25.03.2016">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput" >Заявитель:</label>
+              <input name = "app" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: Джаанбаев Орунбек">
+          </div>
+          <div class="form-group" style="width: 600px;">
+           <label for="formGroupExampleInput2">Название традиционного знания:</label>
+            <input name = "name" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: Игра 'Тогуз-Коргоол'">
+          </div>
+            <button href="{% url 'trz_search_results' %}" type="submit" class="btn btn-primary" style="margin-bottom: 40px">Отправить запрос</button>
+          <button type="button" class="btn btn-primary" onclick="document.getElementById('trz').reset()" value="reset" style="margin-bottom: 40px"> Очистить </button>
+     </form>
+    </div>
+
+
+{% endblock %}

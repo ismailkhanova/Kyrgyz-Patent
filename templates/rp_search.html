@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container wow fadeIn">
+        <h2 style="margin-top: 20px; margin-bottom: 20px; "><span class="section-intro__style">Поиск Рационализаторские предложения</span></h2>
+
+      <form action="{% url 'rp_search_results' %}" method="get" id="rp">
+        <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput" >Входящий номер</label>
+              <input name = "inum" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: 863">
+          </div>
+          <div class="form-group" style="width: 600px;">
+           <label for="formGroupExampleInput2">(22) Дата подачи:</label>
+            <input name = "indate" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: 29.12.2014">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput">(54) Название:</label>
+              <input name = "name" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: Наконечник для отсоса крови">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput" >(11) № регистрации:</label>
+              <input name = "regn" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: 787">
+          </div>
+          <div class="form-group" style="width: 600px;">
+           <label for="formGroupExampleInput2">(15) Дата регистрации:</label>
+            <input name = "rdate" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: 31.12.2014">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput">(72) Автор:</label>
+              <input name = "avt" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: Назаралиева">
+          </div>
+            <button href="{% url 'rp_search_results' %}" type="submit" class="btn btn-primary" style="margin-bottom: 40px">Отправить запрос</button>
+          <button type="button" class="btn btn-primary" onclick="document.getElementById('rp').reset()" value="reset" style="margin-bottom: 40px"> Очистить </button>
+     </form>
+    </div>
+
+
+{% endblock %}

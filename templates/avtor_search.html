@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container wow fadeIn">
+        <h2 style="margin-top: 20px; margin-bottom: 20px; "><span class="section-intro__style">Поиск по базе Авторских прав</span></h2>
+
+      <form action="{% url 'avtor_search_results' %}" method="get" id="author">
+        <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput" >Входящий номер:</label>
+              <input name = "inum" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: 3587">
+          </div>
+          <div class="form-group" style="width: 600px;">
+           <label for="formGroupExampleInput2">Номер свидетельства:</label>
+            <input name = "regn" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: 3492">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput2">Регистрационный номер:</label>
+              <input name = "rnum" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: 20190001.10">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput" >Дата подачи заявки:</label>
+              <input name = "indate" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: 17.08.2012">
+          </div>
+          <div class="form-group" style="width: 600px;">
+           <label for="formGroupExampleInput2">Ф.И.О. Автора</label>
+            <input name = "avt" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: Букарбаев Эрмек Тилекович ">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput">Название произведения:</label>
+              <input name = "nwork" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: Бишкегим">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput2">Обладатель имущественных прав:</label>
+              <input name = "owner" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: Букарбаев Эрмек Тилекович">
+          </div>
+           <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput2">Идентификатор:</label>
+              <input name = "iden" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: C05">
+          </div>
+            <button href="{% url 'avtor_search_results' %}" type="submit" class="btn btn-primary" style="margin-bottom: 40px">Отправить запрос</button>
+          <button type="button" class="btn btn-primary" onclick="document.getElementById('avtor').reset()" value="reset" style="margin-bottom: 40px"> Очистить </button>
+     </form>
+    </div>
+
+
+{% endblock %}

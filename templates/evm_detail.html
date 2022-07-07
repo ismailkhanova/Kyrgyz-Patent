@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="table-responsive">
+    <table class="table table-bordered">
+      <tbody>
+    <tr>
+      <th scope="row">Входящий номер</th>
+        <td>{{ evm.in_number }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дата подачи заявки</th>
+        <td>{{ evm.in_date }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Регистрационный номер</th>
+        <td>{{ evm.registration_number }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Заявитель</th>
+         <td>{{ evm.app_e }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Правообладатель</th>
+         <td>{{ evm.owner }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Контакты</th>
+         <td>{{ evm.adress_kontact }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Название ПО ЭВМ</th>
+
+        <td>{{ evm.name_work }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Дата и место первого выпуска в свет ЭВМ</th>
+        <td>{{ evm.publik_date_place}} </td>
+    </tr>
+    <tr>
+      <th scope="row">Автор</th>
+        <td>{{ evm.avtor }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Номер свидетельства</th>
+          <td>{{ evm.number_svid}}</td>
+    </tr>
+
+     <tr>
+      <th scope="row">Дата регистрации</th>
+          <td>{{ evm.date_svid}}</td>
+    </tr>
+
+      <tr>
+      <th scope="row">Статус</th>
+       {% if evm.status_evm == 1 %}
+      <td style="color: green;">Действует</td>
+        {% else %}
+      <td style="color: red;">Прекращен</td>
+        {% endif %}
+    </tr>
+
+
+  </tbody>
+</table>
+</div>
+
+{% endblock %}

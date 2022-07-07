@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container wow fadeIn">
+        <h2 style="margin-top: 20px; margin-bottom: 20px; "><span class="section-intro__style">Поиск по базе Смежные права</span></h2>
+
+      <form action="{% url 'sp_search_results' %}" method="get" id="sp">
+        <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput" >№ свидетельства:</label>
+              <input name = "nums" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: 1">
+          </div>
+          <div class="form-group" style="width: 600px;">
+           <label for="formGroupExampleInput2">Дата регистрации:</label>
+            <input name = "rdate" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: 05.08.1996">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput">Регистрационный номер:</label>
+              <input name = "rnum" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: 	960001.11">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput" >Дата подачи заявки:</label>
+              <input name = "indate" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: 28.07.1996">
+          </div>
+          <div class="form-group" style="width: 600px;">
+           <label for="formGroupExampleInput2">Название ОСП:</label>
+            <input name = "name" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: Музыка снов">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput">Автор ОАП:</label>
+              <input name = "avt" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: Шелтон">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput2">Обладатель имущественных прав:</label>
+              <input name = "owner" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: 	Назаренко">
+          </div>
+            <button href="{% url 'sp_search_results' %}" type="submit" class="btn btn-primary" style="margin-bottom: 40px">Отправить запрос</button>
+          <button type="button" class="btn btn-primary" onclick="document.getElementById('sp').reset()" value="reset" style="margin-bottom: 40px"> Очистить </button>
+     </form>
+    </div>
+
+
+{% endblock %}

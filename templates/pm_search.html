@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container wow fadeIn">
+        <h2 style="margin-top: 20px; margin-bottom: 20px; "><span class="section-intro__style">Поиск Полезной модели</span></h2>
+
+      <form action="{% url 'pm_search_results' %}" method="get" id="bd">
+        <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput" >(21)Номер заявки</label>
+              <input name = "num" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: 20150060.1">
+          </div>
+          <div class="form-group" style="width: 600px;">
+           <label for="formGroupExampleInput2">(15)Дата регистрации:</label>
+            <input name = "rdate" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: 31.05.2016">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput">(51) Индекс МПК:</label>
+              <input name = "mpk" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: 	B64B 1/50">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput" >(54) Название:</label>
+              <input name = "name" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: Привязной аэростат">
+          </div>
+          <div class="form-group" style="width: 600px;">
+           <label for="formGroupExampleInput2">(71) Заявитель:</label>
+            <input name = "app" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: Табалдиев Т.A.">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput">(72) Автор:</label>
+              <input name = "avt" type="text" class="form-control" id="formGroupExampleInput" placeholder="Пример: Табалдиев Т.A.">
+          </div>
+          <div class="form-group" style="width: 600px;">
+            <label for="formGroupExampleInput2">(73) Патентовладелец:</label>
+              <input name = "owner" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Пример: Табалдиев Т.A.">
+          </div>
+            <button href="{% url 'pm_search_results' %}" type="submit" class="btn btn-primary" style="margin-bottom: 40px">Отправить запрос</button>
+          <button type="button" class="btn btn-primary" onclick="document.getElementById('pm').reset()" value="reset" style="margin-bottom: 40px"> Очистить </button>
+     </form>
+    </div>
+
+
+{% endblock %}

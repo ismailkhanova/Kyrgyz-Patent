@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="table-responsive">
+    <table class="table table-bordered">
+      <tbody>
+    <tr>
+      <th scope="row">Входящий номер</th>
+        <td>{{ bd.in_number }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дата подачи заявки</th>
+        <td>{{ bd.in_date }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Регистрационный номер</th>
+        <td>{{ bd.number_reg }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Заявитель</th>
+         <td>{{ bd.app_b }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Правообладатель</th>
+         <td>{{ bd.owner }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Контакты</th>
+         <td>{{ bd.contact }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Название БД</th>
+
+        <td>{{ bd.name }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Дата и место первого выпуска в свет БД</th>
+        <td>{{ bd.date_place_bd }} </td>
+    </tr>
+    <tr>
+      <th scope="row">Автор</th>
+        <td>{{ bd.avtor }}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Аннотация</th>
+          <td>{{ bd.referat }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Номер свидетельства</th>
+          <td>{{ bd.num_svid}}</td>
+    </tr>
+
+     <tr>
+      <th scope="row">Дата регистрации</th>
+          <td>{{ bd.date_svid}}</td>
+    </tr>
+
+      <tr>
+      <th scope="row">Статус</th>
+       {% if bd.status_bd == 1 %}
+      <td style="color: green;">Действует</td>
+        {% else %}
+      <td style="color: red;">Прекращен</td>
+        {% endif %}
+    </tr>
+
+
+  </tbody>
+</table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="table-responsive">
+    <table class="table table-bordered">
+      <tbody>
+    <tr>
+      <th scope="row">Входящий номер</th>
+        <td>{{ nmpt.in_number }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Вид товара</th>
+        <td>{{ nmpt.vid_tovara }}</td>
+    </tr>
+    <tr>
+      <th scope="row">(11)Номер свидетельства</th>
+        <td>{{ nmpt.k11 }}</td>
+    </tr>
+    <tr>
+        <th scope="row">(15)Дата регистрации</th>
+         <td>{{ nmpt.k15 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">(18)Дата истечения срока действия</th>
+         <td>{{ nmpt.k18 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">(21)Регистрационный номер</th>
+         <td>{{ nmpt.k21 }}</td>
+    </tr>
+    <tr>
+        <th scope="row">(22)Дата подачи заявки</th>
+
+        <td>{{ nmpt.k22 }}</td>
+    </tr>
+    <tr>
+        <th scope="row">(54)Название</th>
+        <td>{{ nmpt.k54 }} </td>
+    </tr>
+    <tr>
+      <th scope="row">(73)Владелец</th>
+        <td>{{ nmpt.k73 }}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">(46)№/Год публикации</th>
+          <td>{{ nmpt.k46 }}</td>
+    </tr>
+    <tr>
+      <th scope="row">(98)Адрес</th>
+          <td>{{ nmpt.k98}}</td>
+    </tr>
+
+     <tr>
+      <th scope="row">(71)Заявитель</th>
+          <td>{{ nmpt.k71}}</td>
+    </tr>
+
+     <tr>
+      <th scope="row">(57)Описание</th>
+          <td>{{ nmpt.k57}}</td>
+    </tr>
+
+      <tr>
+      <th scope="row">Статус</th>
+       {% if nmpt.status_nmpt == 1 %}
+      <td style="color: green;">Действует</td>
+        {% else %}
+      <td style="color: red;">Прекращен</td>
+        {% endif %}
+
+       <tr>
+      <th scope="row">Причина</th>
+          <td>{{ nmpt.remark_nmpt}}</td>
+    </tr>
+    </tr>
+
+
+  </tbody>
+</table>
+</div>
+
+{% endblock %}
