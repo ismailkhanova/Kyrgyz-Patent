@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import IpMark, IpMarkNiceClasses, TblTims, TblNmpt, TblAvtor, TblSp, TblOtz, TblBd, TblInv, TblPm, TblPobr, TblEvm, TblCel, TblTrz, TblRp
+from .models import IpMark, IpMarkNiceClasses, TblTims, TblNmpt, TblAvtor, TblSp, TblOtz,\
+    TblBd, TblInv, TblPm, TblPobr, TblEvm, TblCel, TblTrz, TblRp, License
 
 admin.site.register(IpMark)
 admin.site.register(IpMarkNiceClasses)
@@ -16,3 +17,4 @@ admin.site.register(TblEvm)
 admin.site.register(TblCel)
 admin.site.register(TblTrz)
 admin.site.register(TblRp)
+admin.site.register(License)

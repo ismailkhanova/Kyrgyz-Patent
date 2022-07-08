@@ -37,3 +37,8 @@ pip3 должен быть установлен.
 И можно запускать сервер:
 
     $ python manage.py runserver
+
+Для изменения СУБД в файле /KyrgyzPatent/settings.py находим раздел DATABASE и меняем на нужные параметры:
+<img src="C:\Users\User\Desktop\Снимок.PNG"/>
+
+

@@ -4,12 +4,13 @@ from .models import IpMark, TblTims, TblNmpt, TblAvtor, TblSp, TblOtz, TblBd, Tb
 from django.db.models import Q
 
 
+# Представление страницы с формой поиска Товарных знаков
 class MarkSearchView(ListView):
     model = IpMark
     template_name = 'marks_search.html'
     context_object_name = 'marks'
 
-
+# Представление страницы с результатами поиска товарных знаков
 class MarkSearchResultView(ListView):
     model = IpMark
     template_name = 'marks_search_result.html'
@@ -17,7 +18,7 @@ class MarkSearchResultView(ListView):
     paginate_by = 20
 
 
-    def get_queryset(self):  # новый
+    def get_queryset(self):  #функция фильтрации поиска
         reg = self.request.GET.get('reg')
         name = self.request.GET.get('name')
         rdate = self.request.GET.get('rdate')
@@ -35,24 +36,14 @@ class MarkSearchResultView(ListView):
 
         return mark_result
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['reg'] = self.request.GET.get('reg')
-    #     context['name'] = self.request.GET.get('name')
-    #     context['rdate'] = self.request.GET.get('rdate')
-    #     context['exp'] = self.request.GET.get('exp')
-    #     context['nbr'] = self.request.GET.get('nbr')
-    #     context['mktu'] = self.request.GET.get('mktu')
-    #     context['fdate'] = self.request.GET.get('fdate')
-    #     context['owner'] = self.request.GET.get('owner')
-    #     return context
 
-
+# Представление детального просмотра товарного знака
 class MarkDetail(DetailView):
     model = IpMark
     template_name = 'mark_detail.html'
     context_object_name = "mark"
 
+# ДАЛЕЕ: ПРЕДСТАВЛЕНИЯ ПОВТОРЯЮТСЯ ДЛЯ КАЖДОЙ МОДЕЛИ(ТАБЛИЦЫ)
 
 class TimsSearchView(ListView):
     model = TblTims
@@ -84,19 +75,6 @@ class TimsSearchResultView(ListView):
         )
 
         return tims_result
-
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['nbrs'] = self.request.GET.get('nbrs')
-    #     context['rdate'] = self.request.GET.get('rdate')
-    #     context['nreg'] = self.request.GET.get('nreg')
-    #     context['nbr'] = self.request.GET.get('nbr')
-    #     context['indate'] = self.request.GET.get('indate')
-    #     context['name'] = self.request.GET.get('name')
-    #     context['app'] = self.request.GET.get('app')
-    #     context['avt'] = self.request.GET.get('avt')
-    #     context['owner'] = self.request.GET.get('owner')
-    #     return context
 
 
 class TimsDetail(DetailView):
@@ -132,17 +110,6 @@ class NmptSearchResultView(ListView):
         )
 
         return nmpt_result
-
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['nbrs'] = self.request.GET.get('nbrs')
-    #     context['rdate'] = self.request.GET.get('rdate')
-    #     context['exp'] = self.request.GET.get('exp')
-    #     context['fdate'] = self.request.GET.get('fdate')
-    #     context['name'] = self.request.GET.get('name')
-    #     context['owner'] = self.request.GET.get('owner')
-    #     context['vid'] = self.request.GET.get('vid')
-    #     return context
 
 
 class NmptDetailView(DetailView):
