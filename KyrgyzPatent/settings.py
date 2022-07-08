@@ -76,13 +76,26 @@ WSGI_APPLICATION = 'KyrgyzPatent.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 
+# ДЛЯ POSTGRESQL РАСКОММЕНТИРУЙЕТ СЛЕДУЮЩИЕ СТРОКИ И ЗАКОММЕНТИРУЙТЕ MYSQL
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'SearchSystem', #Вводите имя вашей базы
+#         'USER': 'postgres', # ваше имя пользователя СУБД
+#         'PASSWORD': '123', # пароль
+#         'HOST': 'localhost', # хост
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'SearchSystem',
-        'USER': 'postgres',
-        'PASSWORD': '123',
-        'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'tunduk',  # Вводите имя вашей базы
+        'USER': 'root',  # ваше имя пользователя СУБД
+        'PASSWORD': 'vfvf-gfgf-Z-6104',  # пароль
+        'HOST': 'localhost',  # хост
+       # 'PORT': 'ваш порт' # прописывает порт при необходимости
     }
 }
 
