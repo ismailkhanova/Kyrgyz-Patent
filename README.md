@@ -39,6 +39,5 @@ pip3 должен быть установлен.
     $ python manage.py runserver
 
 Для изменения СУБД в файле /KyrgyzPatent/settings.py находим раздел DATABASE и меняем на нужные параметры:
-<img src="C:\Users\User\Desktop\Снимок.PNG"/>
 
-
+<img src="C:\Users\User\Desktop\Web2\KyrgyzPatent\SearchSystem\static\img\db.PNG"/>
