@@ -16,6 +16,7 @@ class MarkSearchResultView(ListView):
     context_object_name = 'mark_result'
     paginate_by = 20
 
+
     def get_queryset(self):  # новый
         reg = self.request.GET.get('reg')
         name = self.request.GET.get('name')

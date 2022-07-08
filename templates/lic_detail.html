@@ -1,10 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block content %}
+
+    <div class="table-responsive">
+    <table class="table table-bordered">
+      <tbody>
+    <tr>
+      <th scope="row">Номер:</th>
+        <td>{{ lic.id_licen }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дата лицензии</th>
+        <td>{{ lic.in_date_lic }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Номер регистрации ОИС в Кыргызпатенте:</th>
+        <td>{{ lic.in_number_lic }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Дата выдачи номера лицензии:</th>
+         <td>{{ lic.date_in_number_lic }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Наименование ОИС:</th>
+         <td>{{ lic.ois_lic }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Номер регистрации решения:</th>
+         <td>{{ lic.number_lic }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Дата регистрации:</th>
+
+        <td>{{ lic.date_reg_lic }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Название объекта ИС:</th>
+        <td>{{ lic.name_ois }} </td>
+    </tr>
+    <tr>
+      <th scope="row">Правообладатель / Лицензиар:</th>
+        <td>{{ lic.licensiar }}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Адрес правообладателя/лицензиара:</th>
+          <td>{{ lic.address_licensiar }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Правоприемник / Лицензиат:</th>
+          <td>{{ lic.licensiat}}</td>
+    </tr>
+
+     <tr>
+      <th scope="row">Адрес правоприемника/лицензиата:</th>
+          <td>{{ lic.licensiat}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Право пользования:</th>
+          <td>{{ lic.dogovor_lic}}</td>
+    </tr>
+     <tr>
+      <th scope="row">Вид на право пользования:</th>
+          <td>{{ lic.prava_lic }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Место пользования:</th>
+          <td>{{ lic.areal_lic}}</td>
+    </tr>
+
+     <tr>
+      <th scope="row">Срок действия договора:</th>
+          <td>{{ lic.date_end_lic}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Бюллетень:</th>
+          <td>{{ lic.bulleten_lic }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Вид охранного документа:</th>
+          <td>{{ lic.etc_lic}}</td>
+    </tr>
+
+      <tr>
+      <th scope="row">Статус</th>
+       {% if lic.status_lic == 1 %}
+      <td style="color: green;">Действует</td>
+        {% else %}
+      <td style="color: red;">Прекращен</td>
+        {% endif %}
+    </tr>
+
+
+  </tbody>
+</table>
+</div>
+
+{% endblock %}

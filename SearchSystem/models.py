@@ -40,25 +40,25 @@ class IpMarkNiceClasses(models.Model):
 # ЛИЦЕНЗИОННЫЕ ДОГОВОРА
 class License(models.Model):
     id_lic = models.AutoField(primary_key=True, verbose_name='Id')
-    id_licen = models.CharField(max_length=20)
-    in_date_lic = models.TextField()
+    id_licen = models.CharField(max_length=20, verbose_name='Номер')
+    in_date_lic = models.TextField(verbose_name='Дата лицензии')
     in_number_lic = models.TextField(verbose_name='Номер регистрации ОИС в Кыргызпатенте:')
-    date_in_number_lic = models.CharField(max_length=256)
+    date_in_number_lic = models.CharField(max_length=256, verbose_name='Дата выдачи номера лицензии')
     ois_lic = models.TextField(verbose_name='Наименование ОИС')
     number_lic = models.TextField(verbose_name='Номер регистрации решения')
     date_reg_lic = models.TextField(verbose_name='Дата регистрации')
     name_ois = models.TextField(verbose_name='Название объекта ИС')
     licensiar = models.TextField(verbose_name='Правообладатель / Лицензиар')
-    address_licensiar = models.TextField()
+    address_licensiar = models.TextField(verbose_name='Адрес правообладателя/лицензиара')
     licensiat = models.TextField(verbose_name='Правоприемник / Лицензиат')
-    address_licensiat = models.TextField()
-    dogovor_lic = models.TextField()
-    prava_lic = models.TextField()
-    areal_lic = models.TextField()
+    address_licensiat = models.TextField(verbose_name='Адрес правоприемника/лицензиата')
+    dogovor_lic = models.TextField(verbose_name='Право пользования')
+    prava_lic = models.TextField(verbose_name='Вид на право пользования')
+    areal_lic = models.TextField(verbose_name='Место пользования')
     date_end_lic = models.TextField(verbose_name='Срок действия договора')
-    bulleten_lic = models.TextField()
-    etc_lic = models.TextField()
-    status_lic = models.IntegerField()
+    bulleten_lic = models.TextField(verbose_name='Бюллетень')
+    etc_lic = models.TextField(verbose_name='Вид охранного документа')
+    status_lic = models.IntegerField(verbose_name='Статус')
     person = models.CharField(max_length=20)
     date_zapis = models.TextField()
 
@@ -125,7 +125,7 @@ class TblBd(models.Model):
         db_table = 'tbl_bd'
         managed = True
         verbose_name = 'База данных'
-        verbose_name_plural = 'Авторские права'
+        verbose_name_plural = 'Базы данных'
 
     def __str__(self):
         return self.name

@@ -11,7 +11,9 @@
       <th>Название объекта ИС</th>
       <th>Дата регистрации</th>
         <th>Правообладатель/Лицензиар</th>
+        <th>Адрес правообладателя/лицензиара</th>
         <th>Правоприемник/Лицензиат</th>
+        <th>Адрес правоприемника/лицензиата</th>
       <th>Срок действия договора</th>
         <th>Статус</th>
     </tr>
@@ -19,13 +21,15 @@
   <tbody>
   {% for lic in lic_result %}
     <tr>
-        <td>{#  <a href="{% url 'lic_detail' pk=lic.pk %}">#}{{ lic.in_number_lic }}{#</a>#}</td>
+        <td><a href="{% url 'lic_detail' pk=lic.pk %}">{{ lic.in_number_lic }}</a></td>
       <td>{{ lic.number_lic }}</td>
       <td>{{ lic.ois_lic }}</td>
       <td>{{ lic.name_ois }}</td>
       <td>{{ lic.date_reg_lic }}</td>
       <td>{{ lic.licensiar }}</td>
+      <td>{{ lic.address_licensiar }}</td>
       <td>{{ lic.licensiat}}</td>
+      <td>{{ lic.address_licensiat }}</td>
       <td>{{ lic.date_end_lic}}</td>
        {% if lic.status_lic == 1 %}
       <td style="color: green;">Действует</td>
